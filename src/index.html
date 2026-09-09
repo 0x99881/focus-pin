@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';"
+    />
+    <title>专注钉</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main id="app" class="app-shell">
+      <section id="fullApp" class="full-app">
+        <header class="app-header">
+          <div class="brand drag-region">
+            <span class="brand-mark" aria-hidden="true">●</span>
+            <div>
+              <strong>专注钉</strong>
+              <small id="headerSubtitle"></small>
+            </div>
+          </div>
+
+          <nav class="main-nav no-drag" aria-label="主要页面">
+            <button class="nav-button nav-main active" data-view="check">今日检查 <span id="todayNavCount">0/3</span></button>
+            <button class="nav-button nav-flow" data-view="focus">专注时间</button>
+            <i class="nav-divider" aria-hidden="true"></i>
+            <button class="nav-button nav-support" data-view="paper">纸面</button>
+            <button class="nav-button nav-support" data-view="priority">任务主线</button>
+            <button class="nav-button nav-support" data-view="organize">全部数据</button>
+          </nav>
+
+          <div class="window-actions no-drag">
+            <span id="saveStatus" class="save-status">已保存</span>
+            <button id="languageButton" class="window-button text-button language-button" title="Switch to English" aria-label="Switch language">EN</button>
+            <button id="themeButton" class="window-button" title="切换明暗" aria-label="切换明暗">◐</button>
+            <button id="compactButton" class="window-button text-button" title="变成桌面小窗">小窗</button>
+            <button id="minimizeButton" class="window-button" title="最小化" aria-label="最小化">−</button>
+            <button id="closeButton" class="window-button close-button" title="关闭" aria-label="关闭">×</button>
+          </div>
+        </header>
+
+        <button id="reminderButton" class="focus-reminder-banner" data-action="edit-sidebar-reminder" title="修改给自己的提醒">
+          <span class="focus-reminder-label">提醒自己</span>
+          <strong id="sidebarReminder">写一句只对你有用的话</strong>
+          <small>点击修改</small>
+        </button>
+
+        <div class="workspace">
+          <aside class="paper-sidebar">
+            <div class="sidebar-heading">
+              <span>主题电子纸</span>
+              <button id="newPaperButton" class="icon-button" title="新建主题纸" aria-label="新建主题纸">＋</button>
+            </div>
+            <div id="paperList" class="paper-list"></div>
+            <button id="trashButton" class="trash-button">
+              <span>回收站</span>
+              <b id="trashCount">0</b>
+            </button>
+          </aside>
+
+          <section id="content" class="content"></section>
+        </div>
+        <button id="quickCaptureButton" class="global-capture-button no-drag" data-action="open-quick-capture" title="随手记（Ctrl + Shift + Space）">
+          <span>＋</span><strong>随手记</strong>
+        </button>
+      </section>
+
+      <section id="compactApp" class="compact-app hidden">
+        <header class="compact-header drag-region">
+          <div class="compact-brand"><span aria-hidden="true">●</span> 专注</div>
+          <div class="compact-window-actions no-drag">
+            <button data-action="open-quick-capture" title="随手记" aria-label="随手记">＋</button>
+            <button id="compactMinimizeButton" title="最小化" aria-label="最小化">−</button>
+            <button id="expandButton" title="展开" aria-label="展开">□</button>
+            <button id="compactCloseButton" title="关闭" aria-label="关闭">×</button>
+          </div>
+        </header>
+        <div class="compact-body">
+          <div class="compact-current-label">眼前一步</div>
+          <h1 id="compactTask">先从今日检查里选一件</h1>
+          <div class="compact-focus-row">
+            <div>
+              <strong id="compactTime">35:00</strong>
+              <span id="compactTimerStatus">准备开始</span>
+              <small id="compactEndAt">开始后显示结束时间</small>
+            </div>
+            <div class="compact-actions">
+              <button id="compactToggleTimer" class="primary-button" data-action="toggle-timer">开始</button>
+              <button id="compactStopMusic" class="secondary-button" data-action="stop-finish-music" hidden>停音乐</button>
+              <button id="compactComplete" class="secondary-button" data-action="complete-task">完成</button>
+            </div>
+          </div>
+          <div class="compact-progress" aria-hidden="true"><i id="compactProgressFill"></i></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./i18n.js"></script>
+    <script src="./paper-store.js"></script>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

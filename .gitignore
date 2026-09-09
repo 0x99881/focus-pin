@@ -1,0 +1,28 @@
+node_modules/
+.npm-cache/
+.electron-cache/
+.smoke-user-data/
+*.log
+focus-memo-start.log
+
+# runtime artifacts of openFocusWorkbook (user data, not source)
+专注备忘_简约记录表.xlsx
+outputs/
+
+# private local data and recovery material
+data-recovery/
+recovery-export.js
+*-state-readable.json
+historical-records-readable.json
+recovery-*.json
+
+# local-only personal media and obsolete prototypes
+assets/*.m4a
+assets/*.mp3
+assets/*.wav
+web/
+启动专注备忘.cmd
+
+# generated workbook exports
+focus-pin-export.xlsx
+专注钉整理表.xlsx

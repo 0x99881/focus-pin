@@ -1,0 +1,14 @@
+{
+  "name": "desktop-focus-memo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A paper-like desktop planner that turns ideas into one focused task.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "electron": "^39.8.5"
+  }
+}
