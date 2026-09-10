@@ -128,3 +128,7 @@ The checks cover task and paper data, backups and recovery, workbook export, lan
 ## Project status
 
 Focus Pin is an early local desktop demo built around one-person focus. It currently has no account system, collaboration, cloud synchronization, mobile client, or screenshot sharing. Those omissions are intentional: the current goal is a calm, dependable desktop tool that remains useful without a network connection.
+
+## Development
+
+AI development collaborator: **Codex (OpenAI)**
